@@ -4,9 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -24,6 +22,10 @@ public class MainController implements Initializable {
     @FXML private TableColumn<Student, Integer> studentCourse;
     @FXML private TableColumn<Student, Integer> studentGroup;
 
+    @FXML private ChoiceBox<Specialty> specialtyFilter;
+    @FXML private Spinner<Integer> courseFilter;
+    @FXML private Spinner<Integer> groupFilter;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         studentID.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -32,6 +34,16 @@ public class MainController implements Initializable {
         studentSpecialty.setCellValueFactory(new PropertyValueFactory<>("specialty"));
         studentCourse.setCellValueFactory(new PropertyValueFactory<>("course"));
         studentGroup.setCellValueFactory(new PropertyValueFactory<>("group"));
+
+        specialtyFilter.getItems().add(Specialty.COMPUTER_SCIENCE);
+        specialtyFilter.getItems().add(Specialty.BIOINFORMATICS);
+
+        SpinnerValueFactory<Integer> courseFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 4);
+        courseFilter.setValueFactory(courseFactory);
+
+        SpinnerValueFactory<Integer> groupFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 4);
+        groupFilter.setValueFactory(groupFactory);
+        groupFilter.setDisable(true);
 
         EventListener updateTableView = () -> studentTableView.getItems().setAll(StudentsDB.students);
         StudentsDB.onDataBaseUpdate.subscribe(updateTableView);

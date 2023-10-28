@@ -5,4 +5,6 @@ module com.project.studentregistrationsystem {
 
     opens com.project.studentregistrationsystem to javafx.fxml;
     exports com.project.studentregistrationsystem;
+    exports com.project.studentregistrationsystem.filters;
+    opens com.project.studentregistrationsystem.filters to javafx.fxml;
 }
