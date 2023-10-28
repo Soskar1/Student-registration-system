@@ -4,23 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15536bf4-5aa1-4ddf-9f1e-a43bf7899bcd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/StudentRegistrationSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/studentregistrationsystem/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/studentregistrationsystem/main.fxml" afterDir="false" />
+    <list default="true" id="15536bf4-5aa1-4ddf-9f1e-a43bf7899bcd" name="Changes" comment="Prototype design">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/EventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/Observer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/Specialty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/StudentRegistrationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/StudentsDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/studentregistrationsystem/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/studentregistrationsystem/main.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Soskar1"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="41f8dcad-57de-4d99-b3bd-8f1404262945" />
+        <option name="url" value="https://github.com/Soskar1/Student-registration-system.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -34,6 +57,9 @@
   "associatedIndex": 8
 }]]></component>
   <component name="ProjectId" id="2XO4tuZA0aMrsF3evnlH0l4P3XK" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -46,6 +72,11 @@
     "git-widget-placeholder": "master"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\Java\Student-registration-system\src\main\resources\com\project\studentregistrationsystem" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.project.studentregistrationsystem.StudentRegistrationSystem" />
@@ -65,5 +96,9 @@
       <updated>1698487013675</updated>
     </task>
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Prototype design" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prototype design" />
   </component>
 </project>
