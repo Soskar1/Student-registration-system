@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15536bf4-5aa1-4ddf-9f1e-a43bf7899bcd" name="Changes" comment="Prototype design">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/filters/CourseFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/filters/GroupFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/filters/SpecialtyFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/filters/StudentDecorator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/filters/StudentFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/StudentsDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/StudentsDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/studentregistrationsystem/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/studentregistrationsystem/main.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

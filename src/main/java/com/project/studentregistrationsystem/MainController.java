@@ -26,6 +26,8 @@ public class MainController implements Initializable {
     @FXML private Spinner<Integer> courseFilter;
     @FXML private Spinner<Integer> groupFilter;
 
+    private Student selectedStudent;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         studentID.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -49,7 +51,7 @@ public class MainController implements Initializable {
         StudentsDB.onDataBaseUpdate.subscribe(updateTableView);
     }
 
-    public void OnAddStudentButtonPressed() throws IOException {
+    public void addStudent() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(StudentRegistrationSystem.class.getResource("student_registration.fxml"));
         Stage stage = new Stage();
         Scene scene = new Scene(fxmlLoader.load());
@@ -58,5 +60,16 @@ public class MainController implements Initializable {
         stage.setScene(scene);
         stage.show();
         stage.setResizable(false);
+    }
+
+    public void selectStudent() {
+        selectedStudent = studentTableView.getSelectionModel().getSelectedItem();
+    }
+
+    public void removeStudent() {
+        if (selectedStudent != null) {
+            StudentsDB.remove(selectedStudent);
+            selectedStudent = null;
+        }
     }
 }

@@ -12,4 +12,15 @@ public class StudentsDB {
 
         onDataBaseUpdate.notifyListeners();
     }
+
+    public static void remove(Student student) {
+        int id = student.getId();
+        students.remove(id);
+
+        for (int i = id; i < students.size(); ++i) {
+            students.get(i).setId(i);
+        }
+
+        onDataBaseUpdate.notifyListeners();
+    }
 }
