@@ -4,17 +4,15 @@ import com.project.studentregistrationsystem.Student;
 
 import java.util.ArrayList;
 
-public class GroupFilter extends StudentDecorator {
+public class GroupFilter implements StudentFilter {
     private final int group;
 
-    public GroupFilter(StudentFilter filter, int group) {
-        super(filter);
+    public GroupFilter(int group) {
         this.group = group;
     }
 
     @Override
-    public ArrayList<Student> apply(ArrayList<Student> students) {
+    public void apply(ArrayList<Student> students) {
         students.removeIf(student -> student.getGroup() != group);
-        return students;
     }
 }

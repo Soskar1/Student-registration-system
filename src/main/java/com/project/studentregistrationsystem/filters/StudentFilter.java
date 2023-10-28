@@ -5,5 +5,5 @@ import com.project.studentregistrationsystem.Student;
 import java.util.ArrayList;
 
 public interface StudentFilter {
-    ArrayList<Student> apply(ArrayList<Student> students);
+    void apply(ArrayList<Student> students);
 }

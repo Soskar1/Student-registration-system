@@ -5,17 +5,15 @@ import com.project.studentregistrationsystem.Student;
 
 import java.util.ArrayList;
 
-public class SpecialtyFilter extends StudentDecorator {
+public class SpecialtyFilter implements StudentFilter {
     private final Specialty specialty;
 
-    public SpecialtyFilter(StudentFilter filter, Specialty specialty) {
-        super(filter);
+    public SpecialtyFilter(Specialty specialty) {
         this.specialty = specialty;
     }
 
     @Override
-    public ArrayList<Student> apply(ArrayList<Student> students) {
+    public void apply(ArrayList<Student> students) {
         students.removeIf(student -> student.getSpecialty() != specialty);
-        return students;
     }
 }

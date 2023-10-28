@@ -4,17 +4,15 @@ import com.project.studentregistrationsystem.Student;
 
 import java.util.ArrayList;
 
-public class CourseFilter extends StudentDecorator {
+public class CourseFilter implements StudentFilter {
     private final int course;
 
-    public CourseFilter(StudentFilter filter, int course) {
-        super(filter);
+    public CourseFilter(int course) {
         this.course = course;
     }
 
     @Override
-    public ArrayList<Student> apply(ArrayList<Student> students) {
+    public void apply(ArrayList<Student> students) {
         students.removeIf(student -> student.getCourse() != course);
-        return students;
     }
 }
