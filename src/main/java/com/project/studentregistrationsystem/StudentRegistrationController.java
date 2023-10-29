@@ -22,13 +22,13 @@ public class StudentRegistrationController implements Initializable {
         specialty.getItems().add(Specialty.COMPUTER_SCIENCE);
         specialty.getItems().add(Specialty.BIOINFORMATICS);
 
-        SpinnerValueFactory<Integer> ageFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(18, 120);
+        SpinnerValueFactory<Integer> ageFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(18, Integer.MAX_VALUE);
         age.setValueFactory(ageFactory);
 
         SpinnerValueFactory<Integer> courseFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 4);
         course.setValueFactory(courseFactory);
 
-        SpinnerValueFactory<Integer> groupFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 10);
+        SpinnerValueFactory<Integer> groupFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, Integer.MAX_VALUE);
         group.setValueFactory(groupFactory);
     }
 
