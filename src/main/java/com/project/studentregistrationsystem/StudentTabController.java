@@ -33,6 +33,8 @@ public class StudentTabController implements Initializable {
     @FXML private Button courseFilterButton;
     @FXML private Button groupFilterButton;
 
+    @FXML private Button editButton;
+
     private ArrayList<StudentFilter> appliedFilters;
 
     private Student selectedStudent;
@@ -72,6 +74,27 @@ public class StudentTabController implements Initializable {
         Stage stage = new Stage();
         Scene scene = new Scene(fxmlLoader.load());
 
+        StudentRegistrationController controller = fxmlLoader.getController();
+        controller.initialize(null);
+
+        stage.setTitle("Student Registration");
+        stage.setScene(scene);
+        stage.show();
+        stage.setResizable(false);
+
+        clearFilters();
+    }
+
+    public void editStudent() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(StudentRegistrationSystem.class.getResource("student_registration.fxml"));
+        Stage stage = new Stage();
+        Scene scene = new Scene(fxmlLoader.load());
+
+        StudentRegistrationController controller = fxmlLoader.getController();
+        controller.initialize(selectedStudent);
+
+        removeStudent();
+
         stage.setTitle("Student Registration");
         stage.setScene(scene);
         stage.show();
@@ -82,12 +105,15 @@ public class StudentTabController implements Initializable {
 
     public void selectStudent() {
         selectedStudent = studentTableView.getSelectionModel().getSelectedItem();
+        editButton.setDisable(false);
     }
 
     public void removeStudent() {
         if (selectedStudent != null) {
             StudentsDB.remove(selectedStudent);
             selectedStudent = null;
+
+            editButton.setDisable(true);
         }
     }
 
