@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="387.0" prefWidth="849.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="387.0" prefWidth="953.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.studentregistrationsystem.MainController">
   <tabs>
     <Tab text="Students">
       <content>
         <fx:include source="studentsTab.fxml" />
       </content>
     </Tab>
-    <Tab text="Attendance">
+    <Tab fx:id="attendanceTab" text="Attendance">
      <content>
-        <fx:include source="attendanceTab.fxml" />
+        <fx:include source="attendanceTab.fxml" fx:id="attendance" />
      </content>
     </Tab>
   </tabs>

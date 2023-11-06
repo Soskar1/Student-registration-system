@@ -3,6 +3,7 @@ package com.project.studentregistrationsystem;
 import javafx.scene.control.CheckBox;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Student {
     private String name;
@@ -18,18 +19,18 @@ public class Student {
         this.group = group;
 
         attendance = new ArrayList<>() {{
-            add(new ArrayList<>(31));   //January
-            add(new ArrayList<>(28));   //February
-            add(new ArrayList<>(31));   //March
-            add(new ArrayList<>(30));   //April
-            add(new ArrayList<>(31));   //May
-            add(new ArrayList<>(30));   //June
-            add(new ArrayList<>(31));   //July
-            add(new ArrayList<>(31));   //August
-            add(new ArrayList<>(30));   //September
-            add(new ArrayList<>(31));   //October
-            add(new ArrayList<>(30));   //November
-            add(new ArrayList<>(31));   //December
+            add(new ArrayList<>(Collections.nCopies(31, false)));   //January
+            add(new ArrayList<>(Collections.nCopies(28, false)));   //February
+            add(new ArrayList<>(Collections.nCopies(31, false)));   //March
+            add(new ArrayList<>(Collections.nCopies(30, false)));   //April
+            add(new ArrayList<>(Collections.nCopies(31, false)));   //May
+            add(new ArrayList<>(Collections.nCopies(30, false)));   //June
+            add(new ArrayList<>(Collections.nCopies(31, false)));   //July
+            add(new ArrayList<>(Collections.nCopies(31, false)));   //August
+            add(new ArrayList<>(Collections.nCopies(30, false)));   //September
+            add(new ArrayList<>(Collections.nCopies(31, false)));   //October
+            add(new ArrayList<>(Collections.nCopies(30, false)));   //November
+            add(new ArrayList<>(Collections.nCopies(31, false)));   //December
         }};
     }
 
