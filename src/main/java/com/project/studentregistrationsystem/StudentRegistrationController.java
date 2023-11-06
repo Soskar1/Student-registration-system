@@ -12,7 +12,6 @@ import java.util.ResourceBundle;
 
 public class StudentRegistrationController {
     @FXML private TextField name;
-    @FXML private Spinner<Integer> age;
     @FXML private Spinner<Integer> course;
     @FXML private Spinner<Integer> group;
     @FXML private ChoiceBox<Specialty> specialty;
@@ -24,10 +23,6 @@ public class StudentRegistrationController {
 
         name.setText(student == null ? "" : student.getName());
 
-        SpinnerValueFactory<Integer> ageFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(18, Integer.MAX_VALUE);
-        ageFactory.setValue(student == null ? 18 : student.getAge());
-        age.setValueFactory(ageFactory);
-
         SpinnerValueFactory<Integer> courseFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 4);
         courseFactory.setValue(student == null ? 1 : student.getCourse());
         course.setValueFactory(courseFactory);
@@ -38,7 +33,7 @@ public class StudentRegistrationController {
     }
 
     public void OnAddButtonPressed() {
-        Student student = new Student(name.getText(), age.getValue(), course.getValue(), specialty.getValue(), group.getValue());
+        Student student = new Student(name.getText(), course.getValue(), specialty.getValue(), group.getValue());
         StudentsDB.add(student);
     }
 }

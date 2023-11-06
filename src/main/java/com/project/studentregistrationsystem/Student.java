@@ -6,20 +6,16 @@ import java.util.ArrayList;
 
 public class Student {
     private String name;
-    private int age;
     private int course;
     private Specialty specialty;
     private int group;
-    private int id;
-    private final ArrayList<ArrayList<CheckBox>> attendance;
+    private final ArrayList<ArrayList<Boolean>> attendance;
 
-    public Student(String name, int age, int course, Specialty specialty, int group) {
+    public Student(String name, int course, Specialty specialty, int group) {
         this.name = name;
-        this.age = age;
         this.course = course;
         this.specialty = specialty;
         this.group = group;
-        id = -1;
 
         attendance = new ArrayList<>() {{
             add(new ArrayList<>(31));   //January
@@ -41,51 +37,30 @@ public class Student {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
     public int getCourse() {
         return course;
-    }
-
-    public void setCourse(int course) {
-        this.course = course;
     }
 
     public Specialty getSpecialty() {
         return specialty;
     }
 
-    public void setSpecialty(Specialty specialty) {
-        this.specialty = specialty;
-    }
-
     public int getGroup() {
         return group;
     }
 
-    public void setGroup(int group) {
-        this.group = group;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public ArrayList<CheckBox> getAttendanceList(Month month) {
+    public ArrayList<Boolean> getAttendance(Month month) {
         return attendance.get(month.ordinal());
+    }
+
+    public void setAttendance(Month month, int day, boolean value) {
+        var days = attendance.get(month.ordinal());
+        --day;
+
+        if (day >= days.size()) {
+            return;
+        }
+
+        days.set(day, value);
     }
 }

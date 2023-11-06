@@ -2,16 +2,16 @@
 
 <?import javafx.scene.control.*?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="387.0" prefWidth="801.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="387.0" prefWidth="849.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
   <tabs>
     <Tab text="Students">
       <content>
-        <fx:include source="studentsTab.fxml"/>
+        <fx:include source="studentsTab.fxml" />
       </content>
     </Tab>
     <Tab text="Attendance">
      <content>
-        <fx:include source="attendanceTab.fxml"/>
+        <fx:include source="attendanceTab.fxml" />
      </content>
     </Tab>
   </tabs>

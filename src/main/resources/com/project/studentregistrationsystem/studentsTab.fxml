@@ -4,55 +4,54 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="387.0" prefWidth="801.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.studentregistrationsystem.StudentTabController">
+<AnchorPane prefHeight="387.0" prefWidth="859.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.studentregistrationsystem.StudentTabController">
     <children>
         <Label layoutX="7.0" layoutY="12.0" prefHeight="26.0" prefWidth="134.0" text="Students:">
             <font>
                 <Font size="16.0" />
             </font>
         </Label>
-        <TableView fx:id="studentTableView" layoutX="7.0" layoutY="38.0" onMousePressed="#selectStudent" prefHeight="272.0" prefWidth="570.0">
+        <TableView fx:id="studentTableView" layoutX="7.0" layoutY="38.0" onMousePressed="#selectStudent" prefHeight="272.0" prefWidth="602.0">
             <columns>
-                <TableColumn fx:id="studentID" prefWidth="40.0" text="ID" />
-                <TableColumn fx:id="studentName" prefWidth="198.39997100830078" text="Name" />
-                <TableColumn fx:id="studentAge" minWidth="0.0" prefWidth="62.40008544921875" text="Age" />
-                <TableColumn fx:id="studentSpecialty" prefWidth="159.99993896484375" text="Specialty" />
-                <TableColumn fx:id="studentCourse" minWidth="4.7999267578125" prefWidth="52.800048828125" text="Course" />
-                <TableColumn fx:id="studentGroup" minWidth="8.800048828125" prefWidth="56.79998779296875" text="Group" />
+                <TableColumn fx:id="studentName" prefWidth="262.0" text="Name" />
+                <TableColumn fx:id="studentSpecialty" prefWidth="175.0" text="Specialty" />
+                <TableColumn fx:id="studentCourse" minWidth="4.7999267578125" prefWidth="87.0" text="Course" />
+                <TableColumn fx:id="studentGroup" minWidth="8.800048828125" prefWidth="76.0" text="Group" />
             </columns>
         </TableView>
         <Button layoutX="7.0" layoutY="320.0" mnemonicParsing="false" onAction="#addStudent" prefHeight="26.0" prefWidth="112.0" text="Add" />
         <Button layoutX="128.0" layoutY="320.0" mnemonicParsing="false" onAction="#removeStudent" prefHeight="26.0" prefWidth="113.0" text="Remove" />
-        <Button layoutX="439.0" layoutY="320.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="112.0" text="Load" />
-        <Button layoutX="560.0" layoutY="320.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="112.0" text="Save to .csv" />
-        <Button layoutX="682.0" layoutY="320.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="112.0" text="Save to .xls" />
-        <Label alignment="CENTER" layoutX="617.0" layoutY="25.0" prefHeight="26.0" prefWidth="134.0" text="Filter">
+        <Button layoutX="499.0" layoutY="320.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="112.0" text="Load" />
+        <Button layoutX="619.0" layoutY="320.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="112.0" text="Save to .csv" />
+        <Button layoutX="737.0" layoutY="320.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="112.0" text="Save to .xls" />
+        <Label alignment="CENTER" layoutX="657.0" layoutY="25.0" prefHeight="26.0" prefWidth="134.0" text="Filter">
             <font>
                 <Font size="16.0" />
             </font>
         </Label>
-        <Label layoutX="591.0" layoutY="60.0" text="Specialty">
+        <Label layoutX="631.0" layoutY="60.0" text="Specialty">
             <font>
                 <Font size="14.0" />
             </font>
         </Label>
-        <ChoiceBox fx:id="specialtyFilter" layoutX="590.0" layoutY="80.0" prefWidth="150.0" />
-        <Button fx:id="specialtyFilterButton" layoutX="746.0" layoutY="80.0" mnemonicParsing="false" onAction="#applySpecialtyFilter" text="Apply" />
-        <Label layoutX="589.0" layoutY="124.0" text="Course">
+        <ChoiceBox fx:id="specialtyFilter" layoutX="630.0" layoutY="80.0" prefWidth="150.0" />
+        <Button fx:id="specialtyFilterButton" layoutX="786.0" layoutY="80.0" mnemonicParsing="false" onAction="#applySpecialtyFilter" text="Apply" />
+        <Label layoutX="629.0" layoutY="124.0" text="Course">
             <font>
                 <Font size="14.0" />
             </font>
         </Label>
-        <Spinner fx:id="courseFilter" layoutX="591.0" layoutY="144.0" />
-        <Button fx:id="courseFilterButton" layoutX="746.0" layoutY="144.0" mnemonicParsing="false" onAction="#applyCourseFilter" text="Apply" />
-        <Label layoutX="591.0" layoutY="185.0" text="Group">
+        <Spinner fx:id="courseFilter" layoutX="631.0" layoutY="144.0" />
+        <Button fx:id="courseFilterButton" layoutX="786.0" layoutY="144.0" mnemonicParsing="false" onAction="#applyCourseFilter" text="Apply" />
+        <Label layoutX="631.0" layoutY="185.0" text="Group">
             <font>
                 <Font size="14.0" />
             </font>
         </Label>
-        <Spinner fx:id="groupFilter" layoutX="591.0" layoutY="205.0" />
-        <Button fx:id="groupFilterButton" layoutX="746.0" layoutY="205.0" mnemonicParsing="false" onAction="#applyGroupFilter" text="Apply" />
-        <Button layoutX="646.0" layoutY="249.0" mnemonicParsing="false" onAction="#clearFilters" text="Clear filters" />
+        <Spinner fx:id="groupFilter" layoutX="631.0" layoutY="205.0" />
+        <Button fx:id="groupFilterButton" layoutX="786.0" layoutY="205.0" mnemonicParsing="false" onAction="#applyGroupFilter" text="Apply" />
+        <Button layoutX="686.0" layoutY="249.0" mnemonicParsing="false" onAction="#clearFilters" text="Clear filters" />
       <Button fx:id="editButton" disable="true" layoutX="252.0" layoutY="320.0" mnemonicParsing="false" onAction="#editStudent" prefHeight="26.0" prefWidth="113.0" text="Edit" />
+      <Button fx:id="markAttendanceButton" disable="true" layoutX="373.0" layoutY="320.0" mnemonicParsing="false" onAction="#markAttendance" prefHeight="26.0" prefWidth="113.0" text="Mark attendance" />
     </children>
 </AnchorPane>

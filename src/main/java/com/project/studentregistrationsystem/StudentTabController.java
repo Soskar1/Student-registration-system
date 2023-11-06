@@ -19,9 +19,7 @@ import java.util.ResourceBundle;
 
 public class StudentTabController implements Initializable {
     @FXML private TableView<Student> studentTableView;
-    @FXML private TableColumn<Student, Integer> studentID;
     @FXML private TableColumn<Student, String> studentName;
-    @FXML private TableColumn<Student, Integer> studentAge;
     @FXML private TableColumn<Student, String> studentSpecialty;
     @FXML private TableColumn<Student, Integer> studentCourse;
     @FXML private TableColumn<Student, Integer> studentGroup;
@@ -34,6 +32,7 @@ public class StudentTabController implements Initializable {
     @FXML private Button groupFilterButton;
 
     @FXML private Button editButton;
+    @FXML private Button markAttendanceButton;
 
     private ArrayList<StudentFilter> appliedFilters;
 
@@ -41,9 +40,7 @@ public class StudentTabController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        studentID.setCellValueFactory(new PropertyValueFactory<>("id"));
         studentName.setCellValueFactory(new PropertyValueFactory<>("name"));
-        studentAge.setCellValueFactory(new PropertyValueFactory<>("age"));
         studentSpecialty.setCellValueFactory(new PropertyValueFactory<>("specialty"));
         studentCourse.setCellValueFactory(new PropertyValueFactory<>("course"));
         studentGroup.setCellValueFactory(new PropertyValueFactory<>("group"));
@@ -103,9 +100,25 @@ public class StudentTabController implements Initializable {
         clearFilters();
     }
 
+    public void markAttendance() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(StudentRegistrationSystem.class.getResource("attendanceWindow.fxml"));
+        Stage stage = new Stage();
+        Scene scene = new Scene(fxmlLoader.load());
+
+        AttendanceWindowController controller = fxmlLoader.getController();
+        controller.initialize(selectedStudent);
+
+        stage.setTitle("Student Registration");
+        stage.setScene(scene);
+        stage.show();
+        stage.setResizable(false);
+    }
+
     public void selectStudent() {
         selectedStudent = studentTableView.getSelectionModel().getSelectedItem();
+
         editButton.setDisable(false);
+        markAttendanceButton.setDisable(false);
     }
 
     public void removeStudent() {
@@ -114,6 +127,7 @@ public class StudentTabController implements Initializable {
             selectedStudent = null;
 
             editButton.setDisable(true);
+            markAttendanceButton.setDisable(true);
         }
     }
 
