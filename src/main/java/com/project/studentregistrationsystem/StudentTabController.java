@@ -46,6 +46,7 @@ public class StudentTabController implements Initializable {
         studentGroup.setCellValueFactory(new PropertyValueFactory<>("group"));
 
         specialtyFilter.getItems().addAll(Specialty.values());
+        specialtyFilter.setValue(Specialty.COMPUTER_SCIENCE);
 
         SpinnerValueFactory<Integer> courseFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 4);
         courseFilter.setValueFactory(courseFactory);
@@ -117,8 +118,10 @@ public class StudentTabController implements Initializable {
     public void selectStudent() {
         selectedStudent = studentTableView.getSelectionModel().getSelectedItem();
 
-        editButton.setDisable(false);
-        markAttendanceButton.setDisable(false);
+        if (selectedStudent != null) {
+            editButton.setDisable(false);
+            markAttendanceButton.setDisable(false);
+        }
     }
 
     public void removeStudent() {
