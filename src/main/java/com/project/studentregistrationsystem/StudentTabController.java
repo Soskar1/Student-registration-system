@@ -1,10 +1,13 @@
 package com.project.studentregistrationsystem;
 
+import com.itextpdf.text.DocumentException;
 import com.project.studentregistrationsystem.filters.CourseFilter;
 import com.project.studentregistrationsystem.filters.GroupFilter;
 import com.project.studentregistrationsystem.filters.SpecialtyFilter;
 import com.project.studentregistrationsystem.filters.StudentFilter;
 import com.project.studentregistrationsystem.saveload.CSVStudentSaveLoader;
+import com.project.studentregistrationsystem.saveload.DataSaveLoader;
+import com.project.studentregistrationsystem.saveload.StudentSaveLoaderFactory;
 import com.project.studentregistrationsystem.saveload.XLSXStudentSaveLoader;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -37,12 +40,11 @@ public class StudentTabController implements Initializable {
     @FXML private Button editButton;
     @FXML private Button markAttendanceButton;
 
+    @FXML private TextField fileTextField;
+
     private ArrayList<StudentFilter> appliedFilters;
 
     private Student selectedStudent;
-
-    private CSVStudentSaveLoader csvDataSaver;
-    private XLSXStudentSaveLoader xlsxStudentSaver;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -63,9 +65,6 @@ public class StudentTabController implements Initializable {
         StudentsDB.onDataBaseUpdate.subscribe(this::displayStudents);
 
         appliedFilters = new ArrayList<>();
-
-        csvDataSaver = new CSVStudentSaveLoader("D:\\Projects\\Java\\Student-registration-system\\saves\\");
-        xlsxStudentSaver = new XLSXStudentSaveLoader("D:\\Projects\\Java\\Student-registration-system\\saves\\");
     }
 
     private void displayStudents() {
@@ -180,21 +179,22 @@ public class StudentTabController implements Initializable {
         displayStudents();
     }
 
-    public void saveToCSV() throws IOException {
-        csvDataSaver.save("students");
+    public void save() throws DocumentException, IOException {
+        String fileName = fileTextField.getText();
+        DataSaveLoader saveLoader = StudentSaveLoaderFactory.getSaveLoader(fileName);
+
+        if (saveLoader != null) {
+            saveLoader.save(fileName);
+        }
     }
 
-    public void saveToXLSX() throws IOException {
-        xlsxStudentSaver.save("students");
-    }
+    public void load() throws IOException {
+        String fileName = fileTextField.getText();
+        DataSaveLoader saveLoader = StudentSaveLoaderFactory.getSaveLoader(fileName);
 
-    public void loadFromCSV() throws FileNotFoundException {
-        ArrayList<Student> students = csvDataSaver.load("students");
-        StudentsDB.setStudents(students);
-    }
-
-    public void loadFromXLSX() throws IOException {
-        ArrayList<Student> students = xlsxStudentSaver.load("students");
-        StudentsDB.setStudents(students);
+        if (saveLoader != null) {
+            ArrayList<Student> students = saveLoader.load(fileName);
+            StudentsDB.setStudents(students);
+        }
     }
 }

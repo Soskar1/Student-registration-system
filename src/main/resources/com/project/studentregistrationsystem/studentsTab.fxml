@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Spinner?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="387.0" prefWidth="970.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.studentregistrationsystem.StudentTabController">
+<AnchorPane prefHeight="387.0" prefWidth="970.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.studentregistrationsystem.StudentTabController">
     <children>
         <Label layoutX="7.0" layoutY="12.0" prefHeight="26.0" prefWidth="134.0" text="Students:">
             <font>
@@ -26,9 +21,6 @@
         </TableView>
         <Button layoutX="7.0" layoutY="320.0" mnemonicParsing="false" onAction="#addStudent" prefHeight="26.0" prefWidth="112.0" text="Add" />
         <Button layoutX="128.0" layoutY="320.0" mnemonicParsing="false" onAction="#removeStudent" prefHeight="26.0" prefWidth="113.0" text="Remove" />
-        <Button layoutX="614.0" layoutY="320.0" mnemonicParsing="false" onAction="#loadFromCSV" prefHeight="26.0" prefWidth="112.0" text="Load .csv" />
-        <Button layoutX="495.0" layoutY="320.0" mnemonicParsing="false" onAction="#saveToCSV" prefHeight="26.0" prefWidth="112.0" text="Save to .csv" />
-        <Button layoutX="732.0" layoutY="320.0" mnemonicParsing="false" onAction="#saveToXLSX" prefHeight="26.0" prefWidth="112.0" text="Save to .xlsx" />
         <Label alignment="CENTER" layoutX="740.0" layoutY="25.0" prefHeight="26.0" prefWidth="134.0" text="Filter">
             <font>
                 <Font size="16.0" />
@@ -58,6 +50,8 @@
         <Button layoutX="769.0" layoutY="249.0" mnemonicParsing="false" onAction="#clearFilters" text="Clear filters" />
       <Button fx:id="editButton" disable="true" layoutX="252.0" layoutY="320.0" mnemonicParsing="false" onAction="#editStudent" prefHeight="26.0" prefWidth="113.0" text="Edit" />
       <Button fx:id="markAttendanceButton" disable="true" layoutX="373.0" layoutY="320.0" mnemonicParsing="false" onAction="#markAttendance" prefHeight="26.0" prefWidth="113.0" text="Mark attendance" />
-      <Button layoutX="849.0" layoutY="320.0" mnemonicParsing="false" onAction="#loadFromXLSX" prefHeight="26.0" prefWidth="112.0" text="Load .xlsx" />
+      <TextField fx:id="fileTextField" layoutX="576.0" layoutY="322.0" promptText="File name" />
+      <Button layoutX="732.0" layoutY="321.0" mnemonicParsing="false" onAction="#save" prefHeight="26.0" prefWidth="112.0" text="Save" />
+      <Button layoutX="851.0" layoutY="320.0" mnemonicParsing="false" onAction="#load" prefHeight="26.0" prefWidth="112.0" text="Load" />
     </children>
 </AnchorPane>

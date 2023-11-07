@@ -14,8 +14,6 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class XLSXStudentSaveLoader extends DataSaveLoader {
-    private final String extension = ".xlsx";
-
     public XLSXStudentSaveLoader(String saveDirectory) {
         super(saveDirectory);
     }
@@ -43,7 +41,7 @@ public class XLSXStudentSaveLoader extends DataSaveLoader {
             ++rowID;
         }
 
-        String path = getSaveDirectory() + fileName + extension;
+        String path = getSaveDirectory() + fileName;
         FileOutputStream out = new FileOutputStream(path);
 
         workbook.write(out);
@@ -52,7 +50,7 @@ public class XLSXStudentSaveLoader extends DataSaveLoader {
 
     @Override
     public ArrayList<Student> load(String fileName) throws IOException {
-        String path = getSaveDirectory() + fileName + extension;
+        String path = getSaveDirectory() + fileName;
         InputStream stream = new FileInputStream(path);
         XSSFWorkbook workbook = new XSSFWorkbook(stream);
         XSSFSheet spreadsheet = workbook.getSheetAt(0);

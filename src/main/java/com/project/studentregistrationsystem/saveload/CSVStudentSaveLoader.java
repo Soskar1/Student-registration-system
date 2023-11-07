@@ -13,15 +13,13 @@ import java.io.File;
 import java.util.Scanner;
 
 public class CSVStudentSaveLoader extends DataSaveLoader {
-    private final String extension = ".csv";
-
     public CSVStudentSaveLoader(String saveDirectory) {
         super(saveDirectory);
     }
 
     @Override
     public void save(String fileName) throws IOException {
-        String filePath = getSaveDirectory() + fileName + extension;
+        String filePath = getSaveDirectory() + fileName;
         File file = new File(filePath);
 
         if (file.createNewFile()) {
@@ -49,7 +47,7 @@ public class CSVStudentSaveLoader extends DataSaveLoader {
     public ArrayList<Student> load(String fileName) throws FileNotFoundException {
         ArrayList<Student> students = new ArrayList<>();
 
-        String filePath = getSaveDirectory() + fileName + extension;
+        String filePath = getSaveDirectory() + fileName;
         File file = new File(filePath);
 
         Scanner scanner = new Scanner(file);
