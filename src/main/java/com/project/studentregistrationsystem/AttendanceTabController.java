@@ -66,7 +66,7 @@ public class AttendanceTabController implements Initializable {
         studentName.setCellValueFactory(new PropertyValueFactory<>("name"));
         studentAttendance.getColumns().add(studentName);
 
-        ArrayList<Student> students = new ArrayList<>(StudentsDB.students);
+        ArrayList<Student> students = StudentsDB.getStudentsCopy();
         applyAllFilters(students);
 
         int days = daysInMonth.get(month.getValue());

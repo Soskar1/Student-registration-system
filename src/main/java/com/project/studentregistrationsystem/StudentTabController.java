@@ -4,6 +4,7 @@ import com.project.studentregistrationsystem.filters.CourseFilter;
 import com.project.studentregistrationsystem.filters.GroupFilter;
 import com.project.studentregistrationsystem.filters.SpecialtyFilter;
 import com.project.studentregistrationsystem.filters.StudentFilter;
+import com.project.studentregistrationsystem.saveload.CSVDataSaver;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -38,6 +39,8 @@ public class StudentTabController implements Initializable {
 
     private Student selectedStudent;
 
+    private CSVDataSaver csvDataSaver;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         studentName.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -57,10 +60,12 @@ public class StudentTabController implements Initializable {
         StudentsDB.onDataBaseUpdate.subscribe(this::displayStudents);
 
         appliedFilters = new ArrayList<>();
+
+        csvDataSaver = new CSVDataSaver("D:\\Projects\\Java\\Student-registration-system\\saves\\");
     }
 
     private void displayStudents() {
-        studentTableView.getItems().setAll(StudentsDB.students);
+        studentTableView.getItems().setAll(StudentsDB.getStudentsCopy());
     }
 
     private void displayStudents(ArrayList<Student> students) {
@@ -153,7 +158,7 @@ public class StudentTabController implements Initializable {
     }
 
     private void applyAllFilters() {
-        ArrayList<Student> studentsCopy = new ArrayList<>(StudentsDB.students);
+        ArrayList<Student> studentsCopy = StudentsDB.getStudentsCopy();
 
         for (StudentFilter filter : appliedFilters) {
             filter.apply(studentsCopy);
@@ -169,5 +174,9 @@ public class StudentTabController implements Initializable {
 
         appliedFilters.clear();
         displayStudents();
+    }
+
+    public void saveToCSV() throws IOException {
+        csvDataSaver.save("students");
     }
 }
