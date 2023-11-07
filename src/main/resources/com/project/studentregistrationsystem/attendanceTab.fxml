@@ -40,6 +40,6 @@
             </font>
         </Label>
         <Spinner fx:id="groupSpinner" layoutX="485.0" layoutY="34.0" />
-        <Button layoutX="815.0" layoutY="34.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="148.0" text="Save to .pdf" />
+        <Button layoutX="815.0" layoutY="34.0" mnemonicParsing="false" onAction="#saveToPDF" prefHeight="25.0" prefWidth="148.0" text="Save to .pdf" />
     </children>
 </AnchorPane>

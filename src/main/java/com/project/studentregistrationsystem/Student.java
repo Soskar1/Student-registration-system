@@ -1,15 +1,13 @@
 package com.project.studentregistrationsystem;
 
-import javafx.scene.control.CheckBox;
-
 import java.util.ArrayList;
 import java.util.Collections;
 
 public class Student {
-    private String name;
-    private int course;
-    private Specialty specialty;
-    private int group;
+    private final String name;
+    private final int course;
+    private final Specialty specialty;
+    private final int group;
     private final ArrayList<ArrayList<Boolean>> attendance;
 
     public Student(String name, int course, Specialty specialty, int group) {
@@ -19,18 +17,18 @@ public class Student {
         this.group = group;
 
         attendance = new ArrayList<>() {{
-            add(new ArrayList<>(Collections.nCopies(31, false)));   //January
-            add(new ArrayList<>(Collections.nCopies(28, false)));   //February
-            add(new ArrayList<>(Collections.nCopies(31, false)));   //March
-            add(new ArrayList<>(Collections.nCopies(30, false)));   //April
-            add(new ArrayList<>(Collections.nCopies(31, false)));   //May
-            add(new ArrayList<>(Collections.nCopies(30, false)));   //June
-            add(new ArrayList<>(Collections.nCopies(31, false)));   //July
-            add(new ArrayList<>(Collections.nCopies(31, false)));   //August
-            add(new ArrayList<>(Collections.nCopies(30, false)));   //September
-            add(new ArrayList<>(Collections.nCopies(31, false)));   //October
-            add(new ArrayList<>(Collections.nCopies(30, false)));   //November
-            add(new ArrayList<>(Collections.nCopies(31, false)));   //December
+            add(new ArrayList<>(Collections.nCopies(Date.daysInMonths.get(Month.January), false)));
+            add(new ArrayList<>(Collections.nCopies(Date.daysInMonths.get(Month.February), false)));
+            add(new ArrayList<>(Collections.nCopies(Date.daysInMonths.get(Month.March), false)));
+            add(new ArrayList<>(Collections.nCopies(Date.daysInMonths.get(Month.April), false)));
+            add(new ArrayList<>(Collections.nCopies(Date.daysInMonths.get(Month.May), false)));
+            add(new ArrayList<>(Collections.nCopies(Date.daysInMonths.get(Month.June), false)));
+            add(new ArrayList<>(Collections.nCopies(Date.daysInMonths.get(Month.July), false)));
+            add(new ArrayList<>(Collections.nCopies(Date.daysInMonths.get(Month.August), false)));
+            add(new ArrayList<>(Collections.nCopies(Date.daysInMonths.get(Month.September), false)));
+            add(new ArrayList<>(Collections.nCopies(Date.daysInMonths.get(Month.October), false)));
+            add(new ArrayList<>(Collections.nCopies(Date.daysInMonths.get(Month.November), false)));
+            add(new ArrayList<>(Collections.nCopies(Date.daysInMonths.get(Month.December), false)));
         }};
     }
 

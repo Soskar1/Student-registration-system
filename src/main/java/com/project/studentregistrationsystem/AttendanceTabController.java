@@ -1,18 +1,17 @@
 package com.project.studentregistrationsystem;
 
+import com.itextpdf.text.DocumentException;
 import com.project.studentregistrationsystem.filters.*;
-import javafx.beans.property.SimpleBooleanProperty;
+import com.project.studentregistrationsystem.saveload.PDFAttendanceSaver;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.util.Callback;
 
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Hashtable;
 import java.util.ResourceBundle;
 
 public class AttendanceTabController implements Initializable {
@@ -22,20 +21,9 @@ public class AttendanceTabController implements Initializable {
     @FXML private Spinner<Integer> courseSpinner;
     @FXML private Spinner<Integer> groupSpinner;
 
-    private final Hashtable<Month, Integer> daysInMonth = new Hashtable<>() {{
-        put(Month.January, 31);
-        put(Month.February, 28);
-        put(Month.March, 31);
-        put(Month.April, 30);
-        put(Month.May, 31);
-        put(Month.June, 30);
-        put(Month.July, 31);
-        put(Month.August, 31);
-        put(Month.September, 30);
-        put(Month.October, 31);
-        put(Month.November, 30);
-        put(Month.December, 31);
-    }};
+    private ArrayList<Student> currentGroupStudents = new ArrayList<>();
+
+    private final PDFAttendanceSaver attendanceSaver = new PDFAttendanceSaver();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -69,7 +57,7 @@ public class AttendanceTabController implements Initializable {
         ArrayList<Student> students = StudentsDB.getStudentsCopy();
         applyAllFilters(students);
 
-        int days = daysInMonth.get(month.getValue());
+        int days = Date.daysInMonths.get(month.getValue());
 
         for (int i = 0; i < days; ++i) {
             TableColumn<Student, String> tableColumn = createStudentDayAttendanceColumn(i);
@@ -77,6 +65,7 @@ public class AttendanceTabController implements Initializable {
         }
 
         studentAttendance.getItems().addAll(students);
+        currentGroupStudents = students;
     }
 
     private TableColumn<Student, String> createStudentDayAttendanceColumn(int i) {
@@ -101,5 +90,15 @@ public class AttendanceTabController implements Initializable {
         specialtyFilter.apply(studentsCopy);
         groupFilter.apply(studentsCopy);
         courseFilter.apply(studentsCopy);
+    }
+
+    public void saveToPDF() throws DocumentException, FileNotFoundException {
+        Specialty specialty = specialtyChoiceBox.getValue();
+        int course = courseSpinner.getValue();
+        int group = groupSpinner.getValue();
+
+        GroupInfo groupInfo = new GroupInfo(specialty, course, group, currentGroupStudents);
+        String fileName = specialty.toString() + '_' + course + "course_" + group + "group_" + month.getValue().toString();
+        attendanceSaver.save(fileName, month.getValue(), groupInfo);
     }
 }
