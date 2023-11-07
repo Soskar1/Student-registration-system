@@ -4,7 +4,8 @@ import com.project.studentregistrationsystem.filters.CourseFilter;
 import com.project.studentregistrationsystem.filters.GroupFilter;
 import com.project.studentregistrationsystem.filters.SpecialtyFilter;
 import com.project.studentregistrationsystem.filters.StudentFilter;
-import com.project.studentregistrationsystem.saveload.CSVDataSaver;
+import com.project.studentregistrationsystem.saveload.CSVStudentSaveLoader;
+import com.project.studentregistrationsystem.saveload.XLSXStudentSaveLoader;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -13,6 +14,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -39,7 +41,8 @@ public class StudentTabController implements Initializable {
 
     private Student selectedStudent;
 
-    private CSVDataSaver csvDataSaver;
+    private CSVStudentSaveLoader csvDataSaver;
+    private XLSXStudentSaveLoader xlsxStudentSaver;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -61,7 +64,8 @@ public class StudentTabController implements Initializable {
 
         appliedFilters = new ArrayList<>();
 
-        csvDataSaver = new CSVDataSaver("D:\\Projects\\Java\\Student-registration-system\\saves\\");
+        csvDataSaver = new CSVStudentSaveLoader("D:\\Projects\\Java\\Student-registration-system\\saves\\");
+        xlsxStudentSaver = new XLSXStudentSaveLoader("D:\\Projects\\Java\\Student-registration-system\\saves\\");
     }
 
     private void displayStudents() {
@@ -178,5 +182,19 @@ public class StudentTabController implements Initializable {
 
     public void saveToCSV() throws IOException {
         csvDataSaver.save("students");
+    }
+
+    public void saveToXLSX() throws IOException {
+        xlsxStudentSaver.save("students");
+    }
+
+    public void loadFromCSV() throws FileNotFoundException {
+        ArrayList<Student> students = csvDataSaver.load("students");
+        StudentsDB.setStudents(students);
+    }
+
+    public void loadFromXLSX() throws FileNotFoundException {
+        ArrayList<Student> students = xlsxStudentSaver.load("students");
+        StudentsDB.setStudents(students);
     }
 }

@@ -1,15 +1,20 @@
 package com.project.studentregistrationsystem.saveload;
 
-import java.io.IOException;
+import com.project.studentregistrationsystem.Student;
 
-public abstract class DataSaver {
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+
+public abstract class DataSaveLoader {
     private final String saveDirectory;
 
-    public DataSaver(String saveDirectory) {
+    public DataSaveLoader(String saveDirectory) {
         this.saveDirectory = saveDirectory;
     }
 
     public abstract void save(String fileName) throws IOException;
+    public abstract ArrayList<Student> load(String fileName) throws FileNotFoundException;
 
     protected String getSaveDirectory() {
         return saveDirectory;
