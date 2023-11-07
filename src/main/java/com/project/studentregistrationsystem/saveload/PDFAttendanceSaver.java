@@ -5,10 +5,10 @@ import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.PageSize;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.*;
-import com.project.studentregistrationsystem.Date;
+import com.project.studentregistrationsystem.time.Date;
 import com.project.studentregistrationsystem.GroupInfo;
-import com.project.studentregistrationsystem.Month;
-import com.project.studentregistrationsystem.Student;
+import com.project.studentregistrationsystem.time.Month;
+import com.project.studentregistrationsystem.students.Student;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;

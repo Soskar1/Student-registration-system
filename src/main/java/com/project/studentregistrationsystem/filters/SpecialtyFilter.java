@@ -1,7 +1,7 @@
 package com.project.studentregistrationsystem.filters;
 
-import com.project.studentregistrationsystem.Specialty;
-import com.project.studentregistrationsystem.Student;
+import com.project.studentregistrationsystem.students.Specialty;
+import com.project.studentregistrationsystem.students.Student;
 
 import java.util.ArrayList;
 

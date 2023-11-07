@@ -1,7 +1,9 @@
 package com.project.studentregistrationsystem;
 
+import com.project.studentregistrationsystem.students.Student;
+import com.project.studentregistrationsystem.time.Date;
+import com.project.studentregistrationsystem.time.Month;
 import javafx.fxml.FXML;
-import javafx.geometry.Pos;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
@@ -27,10 +29,8 @@ public class AttendanceWindowController {
         studentGroup.setText("Group: " + student.getGroup());
 
         monthChoiceBox.getItems().setAll(Month.values());
+        monthChoiceBox.setOnAction(event -> updateDaySpinner());
         monthChoiceBox.setValue(Month.January);
-
-        SpinnerValueFactory<Integer> factory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 31);
-        daySpinner.setValueFactory(factory);
     }
 
     public void markAttendance() {
@@ -39,5 +39,10 @@ public class AttendanceWindowController {
 
     public void eraseAttendance() {
         student.setAttendance(monthChoiceBox.getValue(), daySpinner.getValue(), false);
+    }
+
+    private void updateDaySpinner() {
+        SpinnerValueFactory<Integer> factory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, Date.daysInMonths.get(monthChoiceBox.getValue()));
+        daySpinner.setValueFactory(factory);
     }
 }

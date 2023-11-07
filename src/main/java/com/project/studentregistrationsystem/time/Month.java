@@ -1,4 +1,4 @@
-package com.project.studentregistrationsystem;
+package com.project.studentregistrationsystem.time;
 
 import java.util.Hashtable;
 

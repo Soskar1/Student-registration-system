@@ -1,4 +1,7 @@
-package com.project.studentregistrationsystem;
+package com.project.studentregistrationsystem.students;
+
+import com.project.studentregistrationsystem.time.Date;
+import com.project.studentregistrationsystem.time.Month;
 
 import java.util.ArrayList;
 import java.util.Collections;

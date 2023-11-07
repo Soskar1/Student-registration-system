@@ -1,8 +1,8 @@
 package com.project.studentregistrationsystem.saveload;
 
-import com.project.studentregistrationsystem.Specialty;
-import com.project.studentregistrationsystem.Student;
-import com.project.studentregistrationsystem.StudentsDB;
+import com.project.studentregistrationsystem.students.Specialty;
+import com.project.studentregistrationsystem.students.Student;
+import com.project.studentregistrationsystem.students.StudentsDB;
 
 import java.io.FileNotFoundException;
 import java.io.FileWriter;

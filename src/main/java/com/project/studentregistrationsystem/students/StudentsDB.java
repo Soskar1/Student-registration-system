@@ -1,4 +1,6 @@
-package com.project.studentregistrationsystem;
+package com.project.studentregistrationsystem.students;
+
+import com.project.studentregistrationsystem.Observer;
 
 import java.util.ArrayList;
 

@@ -1,7 +1,7 @@
 package com.project.studentregistrationsystem.saveload;
 
 import com.itextpdf.text.DocumentException;
-import com.project.studentregistrationsystem.Student;
+import com.project.studentregistrationsystem.students.Student;
 
 import java.io.IOException;
 import java.util.ArrayList;

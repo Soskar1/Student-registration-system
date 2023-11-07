@@ -1,14 +1,13 @@
 package com.project.studentregistrationsystem;
 
+import com.project.studentregistrationsystem.students.Specialty;
+import com.project.studentregistrationsystem.students.Student;
+import com.project.studentregistrationsystem.students.StudentsDB;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.control.TextField;
-
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class StudentRegistrationController {
     @FXML private TextField name;

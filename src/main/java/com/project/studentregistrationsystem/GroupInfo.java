@@ -1,5 +1,8 @@
 package com.project.studentregistrationsystem;
 
+import com.project.studentregistrationsystem.students.Specialty;
+import com.project.studentregistrationsystem.students.Student;
+
 import java.util.ArrayList;
 
 public class GroupInfo {
