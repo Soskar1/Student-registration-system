@@ -68,37 +68,30 @@ public class StudentTabController implements Initializable {
     }
 
     public void addStudent() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(StudentRegistrationSystem.class.getResource("student_registration.fxml"));
-        Stage stage = new Stage();
-        Scene scene = new Scene(fxmlLoader.load());
-
-        StudentRegistrationController controller = fxmlLoader.getController();
-        controller.initialize(null);
-
-        stage.setTitle("Student Registration");
-        stage.setScene(scene);
-        stage.show();
-        stage.setResizable(false);
+        openStudentRegistrationSystemWindow(null);
 
         clearFilters();
     }
 
     public void editStudent() throws IOException {
+        openStudentRegistrationSystemWindow(selectedStudent);
+
+        removeStudent();
+        clearFilters();
+    }
+
+    private void openStudentRegistrationSystemWindow(Student student) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(StudentRegistrationSystem.class.getResource("student_registration.fxml"));
         Stage stage = new Stage();
         Scene scene = new Scene(fxmlLoader.load());
 
         StudentRegistrationController controller = fxmlLoader.getController();
-        controller.initialize(selectedStudent);
-
-        removeStudent();
+        controller.initialize(student);
 
         stage.setTitle("Student Registration");
         stage.setScene(scene);
         stage.show();
         stage.setResizable(false);
-
-        clearFilters();
     }
 
     public void markAttendance() throws IOException {

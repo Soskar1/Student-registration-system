@@ -12,7 +12,7 @@
     </Tab>
     <Tab fx:id="attendanceTab" text="Attendance">
      <content>
-        <fx:include source="attendanceTab.fxml" fx:id="attendance" />
+        <fx:include fx:id="attendance" source="attendanceTab.fxml" />
      </content>
     </Tab>
   </tabs>
