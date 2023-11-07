@@ -5,17 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15536bf4-5aa1-4ddf-9f1e-a43bf7899bcd" name="Changes" comment="Prototype design">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/saveload/XLSXStudentSaveLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/StudentTabController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/StudentTabController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/StudentsDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/StudentsDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/saveload/CSVDataSaver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/saveload/CSVStudentSaveLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/saveload/DataSaver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/saveload/DataSaveLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/studentregistrationsystem/attendanceTab.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/studentregistrationsystem/attendanceTab.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/studentregistrationsystem/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/studentregistrationsystem/main.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/studentregistrationsystem/studentsTab.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/studentregistrationsystem/studentsTab.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/saveload/CSVStudentSaveLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/saveload/CSVStudentSaveLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/saveload/DataSaveLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/saveload/DataSaveLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/saveload/XLSXStudentSaveLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/studentregistrationsystem/saveload/XLSXStudentSaveLoader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +78,7 @@
       <recent name="com.project.studentregistrationsystem.saveload" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\Java\Student-registration-system\saves" />
       <recent name="D:\Projects\Java\Student-registration-system\src\main\resources\com\project\studentregistrationsystem" />
     </key>
   </component>

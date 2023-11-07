@@ -193,7 +193,7 @@ public class StudentTabController implements Initializable {
         StudentsDB.setStudents(students);
     }
 
-    public void loadFromXLSX() throws FileNotFoundException {
+    public void loadFromXLSX() throws IOException {
         ArrayList<Student> students = xlsxStudentSaver.load("students");
         StudentsDB.setStudents(students);
     }
