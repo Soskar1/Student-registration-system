@@ -1,5 +1,6 @@
 package com.project.studentregistrationsystem.saveload;
 
+import com.itextpdf.text.DocumentException;
 import com.project.studentregistrationsystem.Student;
 
 import java.io.IOException;
@@ -12,7 +13,7 @@ public abstract class DataSaveLoader {
         this.saveDirectory = saveDirectory;
     }
 
-    public abstract void save(String fileName) throws IOException;
+    public abstract void save(String fileName) throws IOException, DocumentException;
     public abstract ArrayList<Student> load(String fileName) throws IOException;
 
     protected String getSaveDirectory() {

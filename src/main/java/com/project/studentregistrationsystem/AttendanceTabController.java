@@ -23,8 +23,6 @@ public class AttendanceTabController implements Initializable {
 
     private ArrayList<Student> currentGroupStudents = new ArrayList<>();
 
-    private final PDFAttendanceSaver attendanceSaver = new PDFAttendanceSaver();
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         month.getItems().addAll(Month.values());
@@ -99,6 +97,8 @@ public class AttendanceTabController implements Initializable {
 
         GroupInfo groupInfo = new GroupInfo(specialty, course, group, currentGroupStudents);
         String fileName = specialty.toString() + '_' + course + "course_" + group + "group_" + month.getValue().toString();
-        attendanceSaver.save(fileName, month.getValue(), groupInfo);
+
+        PDFAttendanceSaver attendanceSaver = new PDFAttendanceSaver("D:\\Projects\\Java\\Student-registration-system\\saves\\", month.getValue(), groupInfo);
+        attendanceSaver.save(fileName);
     }
 }
